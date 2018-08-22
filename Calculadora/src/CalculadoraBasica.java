@@ -8,7 +8,7 @@ public class CalculadoraBasica {
 			Operaciones c = new Operaciones();
 			switch (signo) {
 				case "-":
-					System.out.println("El resultado es: "+c.resta(i, j));
+					System.out.println("El resultado es:1 "+c.resta(i, j));
 					break;
 				case "+":
 					System.out.println("El resultado es: "+c.suma(i, j));
