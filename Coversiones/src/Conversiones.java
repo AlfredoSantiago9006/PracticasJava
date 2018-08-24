@@ -2,8 +2,7 @@
 
 /**
  * @author alfre
- * Clase Conversiones
- * 
+ * Clase Conversiones  
  */
 public class Conversiones{
 	
