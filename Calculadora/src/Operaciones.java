@@ -1,7 +1,18 @@
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Operaciones.
+ */
 public class Operaciones {
 
 	
+	/**
+	 * Resta.
+	 *
+	 * @param i the i
+	 * @param j the j
+	 * @return the double
+	 */
 	public double resta(String i,String j) {
 		double r=0;
 		try {
@@ -17,6 +28,13 @@ public class Operaciones {
 	}
 	
 	
+	/**
+	 * Suma.
+	 *
+	 * @param i the i
+	 * @param j the j
+	 * @return the double
+	 */
 	public double suma (String i,String j) {
 		double r=0;
 		try {
@@ -31,6 +49,13 @@ public class Operaciones {
 		return r;
 	}
 
+	/**
+	 * Division.
+	 *
+	 * @param i the i
+	 * @param j the j
+	 * @return the double
+	 */
 	public double division(String i, String j) {
 		double r=0;
 		try {
@@ -48,6 +73,13 @@ public class Operaciones {
 	}
 	
 	
+	/**
+	 * Multiplicacion.
+	 *
+	 * @param i the i
+	 * @param j the j
+	 * @return the double
+	 */
 	public double multiplicacion(String i,String j) {
 		double r=0;
 		try {

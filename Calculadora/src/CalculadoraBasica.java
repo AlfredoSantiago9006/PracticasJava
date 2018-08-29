@@ -1,5 +1,14 @@
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CalculadoraBasica.
+ */
 public class CalculadoraBasica {
     
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args) {
 		try {
 			String i = args[0];
