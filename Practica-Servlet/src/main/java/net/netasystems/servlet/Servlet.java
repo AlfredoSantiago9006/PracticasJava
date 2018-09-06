@@ -13,7 +13,9 @@ import net.netasystems.domain.catTipoFabrica;
 import net.netasystems.service.catTipoFabricaService;
 
 /**
- * Servlet implementation class Controlador
+ * Clase Servlet extiende de HttpServlet
+ * @author Neta Systems / Jose Alfredo 
+ * 
  */
 public class Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
