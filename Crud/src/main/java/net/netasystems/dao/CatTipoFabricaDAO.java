@@ -14,8 +14,9 @@ import net.netasystems.domain.CatTipoFabrica;
 
 
 /**
- * @author alfre
- * Clase CatTipoFabricaDAO.
+ * 
+ * @author Neta Systems / Jose Alfredo Santiago
+ * Clase CatTipoFabricaDAO
  */
 public class CatTipoFabricaDAO {
 	
@@ -24,10 +25,10 @@ public class CatTipoFabricaDAO {
 	
 
 	/**
-	 * Metodo publico catTipoFabricaDAO. que realiza la conexion a la base de datos
+	 * Metodo catTipoFabricaDAO. que realiza la conexión a la base de datos
 	 *
-	 * @throws ClassNotFoundException the class not found exception
-	 * @throws SQLException the SQL exception
+	 * @throws ClassNotFoundException Excepción cuando la clase no es encontrada
+	 * @throws SQLException Excepción SQL
 	 */
 	public CatTipoFabricaDAO() throws ClassNotFoundException, SQLException {
 		Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -36,9 +37,9 @@ public class CatTipoFabricaDAO {
 	}
 
 	/**
-	 * Metodo vacio destroy que cierra la base de datos 
+	 * Método vacío destroy que cierra la base de datos 
 	 *
-	 * @throws SQLException Excepcion de SQL que permite ejecutarse aunque haya errores
+	 * @throws SQLException Excepción de SQL que permite ejecutarse aunque haya errores
 	 */
 	public void destroy() throws SQLException {
 		con.close();
@@ -46,18 +47,19 @@ public class CatTipoFabricaDAO {
 	
 
 	/**
-	 * Metodo getAllRecords recupera los registros dentro de la tabla que se va a consultar a traves de una consulta que es mandada
+	 * Método getAllRecords recupera los registros dentro de la tabla que se va a consultar a traves de una consulta que es mandada
 	 * en forma de cadena de texto
 	 *
-	 * @return the all records
-	 * @throws SQLException the SQL exception
+	 * @return todos los registros
+	 * @throws SQLException excepción SQL
 	 */
 	public List<CatTipoFabrica> getAllRecords() throws SQLException{
 		List<CatTipoFabrica> lista = new ArrayList<CatTipoFabrica>();
-		String sql = "select IDCATTIPOFABRICA, NOMBRE, ESTATUS, FECHAMODIFICACION, IDUSUARIO from CAT_TIPO_FABRICA";
+		String sql = "select IDCATTIPOFABRICA, NOMBRE, ESTATUS, FECHAMODIFICACION, IDUSUARIO from CAT_TIPO_FABRICA";//Sentencia select SQL
 		Statement stmt = con.createStatement();
 		ResultSet rs = stmt.executeQuery(sql);
 		while(rs.next()) { // while rs have a result add to list lista 
+			//Parámetros obtenidos de la secuencia
 			long idCatTipoFabrica = rs.getLong("IDCATTIPOFABRICA");
 			String nombre = rs.getString("NOMBRE");
 			String estatusString = rs.getString("ESTATUS");
@@ -72,19 +74,19 @@ public class CatTipoFabricaDAO {
 			CatTipoFabrica registro = new CatTipoFabrica(idCatTipoFabrica, nombre, status, fechaModificacion, idUsuario);
 			lista.add(registro);
 		}
-		rs.close();
+		rs.close();//Cierra la base de datos
 		stmt.close();
 		return lista;
 	}
 	
 	
 	/**
-	 * Metodo UpdateRecord realiza una actualizacion dentro de una tabla especifica recibiendo como parametros los campos a actualizarse
-	 * y mandandolos a traves de una consulta sql a la base de datos en forma de una cadena de texto
+	 * Método UpdateRecord realiza una actualización dentro de una tabla especifica recibiendo como parámetros los campos a actualizarse
+	 * y mandándolos a través de una consulta sql a la base de datos en forma de una cadena de texto
 	 *
-	 * @param record the record
-	 * @return the int
-	 * @throws SQLException the SQL exception
+	 * @param record Parámetro recibido
+	 * @return Variable de tipo entero
+	 * @throws SQLException Excepción SQL
 	 */
 	public int updateRecord(CatTipoFabrica record) throws SQLException {
 		String sql = "UPDATE CAT_TIPO_FABRICA SET NOMBRE = ?,ESTATUS= ?, FECHAMODIFICACION = ?, IDUSUARIO = ? WHERE IDCATTIPOFABRICA=?";
@@ -100,11 +102,11 @@ public class CatTipoFabricaDAO {
 	}
 	
 	/**
-	 * Clase addRecord realiza una inserccion en la base de datos
+	 * Clase addRecord realiza una insurrección en la base de datos
 	 *
-	 * @param record 
-	 * @return 
-	 * @throws SQLException excepcion sql
+	 * @param record parámetro recibido
+	 * @return variable tipo entero
+	 * @throws SQLException Excepción SQL
 	 */
 	public int addRecord(CatTipoFabrica record) throws SQLException {
 		String sql = "INSERT INTO cat_tipo_fabrica VALUES (?,?,?,?,?)"; //Consulta sql que inserta los parametros recibidos
@@ -125,7 +127,7 @@ public class CatTipoFabricaDAO {
 	 *
 	 * @param record registro
 	 * @return regresa un entero
-	 * @throws SQLException excepcion sql
+	 * @throws SQLException Excepción SQL
 	 */
 	public int deleteRecord(CatTipoFabrica record) throws SQLException {
 		String sql ="DELETE FROM CAT_TIPO_FABRICA WHERE IDCATTIPOFABRICA = ?";//Borra el registro por IDCATTIPOFABRICA
@@ -143,9 +145,9 @@ public class CatTipoFabricaDAO {
 	/**
 	 * clase checkIdUse revisa si el IDCATTIPOFARICA no este siendo usado por otro registro
 	 *
-	 * @param id id de parametro
+	 * @param id id de parámetro
 	 * @return true si esta disponible
-	 * @throws SQLException the SQL exception
+	 * @throws SQLException Excepción SQL
 	 */
 	public boolean checkIdUse (Long id) throws SQLException {
 		String sql = "Select 1 from CAT_TIPO_FABRICA WHERE IDCATTIPOFABRICA = ?";

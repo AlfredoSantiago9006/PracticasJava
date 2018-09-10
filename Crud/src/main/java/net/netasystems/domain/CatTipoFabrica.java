@@ -4,20 +4,21 @@ import java.util.Date;
 
 // TODO: Auto-generated Javadoc
 /**
+ * @author Neta Systems / José Alfredo Santiago
  * The Class CatTipoFabrica.
  */
 public class CatTipoFabrica {
 	
-	/** The id tipo fabrica. */
+	/** id tipo fabrica. */
 	private long idTipoFabrica;
 	
-	/** The nombre. */
+	/** nombre. */
 	private String nombre;
 	
-	/** The status. */
+	/**  status. */
 	private Character status;
 	
-	/** The fecha de modificacion. */
+	/**  fecha de modificación. */
 	private Date fechaDeModificacion;
 	
 	/** The id usuario. */
@@ -38,7 +39,7 @@ public class CatTipoFabrica {
 	 * @param idTipoFabrica id del tipo de fabrica
 	 * @param nombre nombre de la fabrica
 	 * @param status el estatus de la fabrica
-	 * @param fechaDeModificacion fecha de la modificacion
+	 * @param fechaDeModificacion fecha de la modificación
 	 * @param idUsuario id del usuario
 	 */
 	public CatTipoFabrica(long idTipoFabrica, String nombre, Character status, Date fechaDeModificacion, long idUsuario) {

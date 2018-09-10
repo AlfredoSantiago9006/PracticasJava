@@ -9,7 +9,7 @@ import net.netasystems.domain.CatTipoFabrica;
 
 /**
  * 
- * @author alfre
+ * @author Neta Systems / José Alfredo Santiago
  * 
  * Clase Main que contiene el metodo main que ejecuta el código 
  *
