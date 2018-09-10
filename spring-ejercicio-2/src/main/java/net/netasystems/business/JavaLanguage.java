@@ -1,9 +1,14 @@
 package net.netasystems.business;
+
+import org.springframework.stereotype.Component;
+
 /**
  * 
  * @author Neta Systems / Jose Alfredo Santiago
  * Clase JavaLanguage implemeta la interface Language
  */
+
+@Component
 public class JavaLanguage implements Languaje {
 	/**
 	 * Variable version de tipo String
@@ -31,7 +36,7 @@ public class JavaLanguage implements Languaje {
 
 	public String version() {
 		// TODO Auto-generated method stub
-		return "5";
+		return version;
 	}
     
 }

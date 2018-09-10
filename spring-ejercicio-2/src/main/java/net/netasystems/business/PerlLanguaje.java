@@ -1,12 +1,17 @@
 package net.netasystems.business;
+
+import org.springframework.stereotype.Component;
+
 /**
  * 
  * @author Neta Systems / Jose Alfredo Santiago
  *
  * Clase PearlLanguaje implementa los metodos de la clase Languaje
  */
+@Component
 public class PerlLanguaje implements Languaje {
-	public String version;
+	private String version;
+	
 
 	/**
 	 * Getter obtiene el valor de la variable
@@ -24,7 +29,7 @@ public class PerlLanguaje implements Languaje {
 		this.version = version;
 	}
 
-	private String descriptionLanguage;
+	private String descriptionLanguage = "This is Pearl honey!!!";
 
 	/**
 	 * Getter obtiene el valor de la variable
@@ -48,6 +53,6 @@ public class PerlLanguaje implements Languaje {
 
 	public String version() {
 		// TODO Auto-generated method stub
-		return null;
+		return version;
 	}
 }

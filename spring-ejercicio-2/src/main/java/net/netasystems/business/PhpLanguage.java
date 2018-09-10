@@ -1,22 +1,25 @@
 package net.netasystems.business;
 
+import org.springframework.stereotype.Component;
+
 /**
  * 
  * @author Neta Systems / Jose Alfredo Santiago
  *
  * Clase PhpLanguage implementa la interface Languaje 
  **/
+@Component
 public class PhpLanguage implements Languaje {
 
 	/**
 	 * Variables de la clase
 	 */
-	private String version;
-	private String descriptionLanguage;
+	private String version = "1.7";
+	private String descriptionLanguage = "PHP baby!!!";
 	
 	/**
-	 * Getter Obtiene el valor de la variable
-	 * @param descriptionLanguage valor obtenido
+	 * Setter Asigna el valor a la variable
+	 * @param descriptionLanguage valor asignado
 	 */
 	public void setDescriptionLanguage(String descriptionLanguage) {
 		this.descriptionLanguage = descriptionLanguage;

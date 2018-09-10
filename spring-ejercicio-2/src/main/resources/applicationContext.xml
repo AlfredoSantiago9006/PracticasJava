@@ -1,28 +1,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-	http://www.springframework.org/schema/beans/spring-beans.xsd">
-     <bean id="javaLanguage" class="net.netasystems.business.JavaLanguage">
-    	<property name="version" value="1.8.110"></property>
-    </bean>
-     <bean id="perlLanguage" class="net.netasystems.business.PerlLanguaje">
-        <property name="descriptionLanguage" value="Perl, usando descripcion desde XML!"/>
-        <property name="version" value="5.26002.0"></property>
-    </bean>
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<context:annotation-config></context:annotation-config><!-- XML utilizando las anotaciones  -->
+	<context:component-scan base-package="net.netasystems.business"></context:component-scan>
     
-    <bean id="PhpLanguage" class="net.netasystems.business.PhpLanguage">
-    	<property name="descriptionLanguage" value="Php"></property>
-    	<property name="version" value="5"></property>
-    </bean>
-     <bean id="amaroProgrammer" class="net.netasystems.business.Amaro" >
-        <constructor-arg ref="perlLanguage"/>
-    </bean>
-    
-    <bean id="alfredo" class="net.netasystems.business.Alfredo">
-        <constructor-arg ref="PhpLanguage"></constructor-arg>
-    </bean>
-    
-    <bean id="masterProgrammer" class="net.netasystems.business.MasterProgrammer" >
-        <property name="languaje" ref="javaLanguage" />
-    </bean>
- </beans>
+</beans>
